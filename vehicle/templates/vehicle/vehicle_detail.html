@@ -4,71 +4,64 @@
 {% block body %}
 <div class="card profile-card">
                         <div class="profile-header">&nbsp;</div>
-
-
                     </div>
-
                     <div class="card card-about-me">
-
                         <div class="body">
-                            <ul>
-                                <li>
+                            <div class="col-sm-6">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i>
+                                        <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        Vehicle Number
-                                    </div>
-                                    <div class="content">
-                                        {{ object.v_no }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        Driver Name
-                                    </div>
-                                    <div class="content">
-                                       {{ object.driver_name }}
-                                    </div>
-                                </li>
-                                <li>
+                                </div>
+                            <div class="col-sm-6">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        fuel type
-                                    </div>
-                                    <div class="content">
-                                        {{ object.fuel_type }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Remarks
-                                    </div>
-                                    <div class="content">
-                                        {{ object.remarks }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        Creditor
+                                        <b>Creditor</b>
                                     </div>
                                     <div class="content">
                                         {{ object.creditor }}
                                     </div>
-                                </li>
-
-
-
-                            </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Vehicle Number</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.v_no }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Driver Name</b>
+                                    </div>
+                                    <div class="content">
+                                       {{ object.driver_name }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>fuel type</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.fuel_type }}
+                                    </div>
+                                </div>
+                            <div class="col-sm-6">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Remarks</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.remarks }}
+                                    </div>
+                                </div>
+                    <br><br><br><br><br><br><br>
                         </div>
                     </div>
 {% endblock %}
