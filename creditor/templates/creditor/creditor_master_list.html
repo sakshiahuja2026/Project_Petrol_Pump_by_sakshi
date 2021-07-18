@@ -45,13 +45,15 @@
                                         <td>
                                             <a href="{% url 'creditor-update'  creditor.id %}" class="btn btn-info"> update</a>
                                             <a href="{% url 'creditor-delete'  creditor.id %}" class="btn btn-danger"> Delete</a>
-                                            <a href="{% url 'creditor-detail'  creditor.id %}" class="btn btn-danger"> Detail</a>
+                                            <a href="{% url 'creditor-detail'  creditor.id %}" class="btn btn-success"> Detail</a>
                                         </td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
                                 </table>
 
+{% endblock %}
+{% block js %}
 {% endblock %}
 {% block extra_js %}
             <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -83,7 +85,7 @@
             },
               {
                 extend: 'print',
-                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img.png' %}' width='200' height='200'></img></div>"
+                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img1.png' %}' width='200' height='200'></img></div>"
             }
         ]
     } );

@@ -37,7 +37,7 @@
                                             <td>
                                                 <a href="{% url 'vehicle-update'  vehicle.id %}" class="btn btn-info"> update</a>
                                                 <a href="{% url 'vehicle-delete'  vehicle.id %}" class="btn btn-danger"> Delete</a>
-                                                <a href="{% url 'vehicle-detail'  vehicle.id %}" class="btn btn-danger"> Detail</a>
+                                                <a href="{% url 'vehicle-detail'  vehicle.id %}" class="btn btn-success"> Detail</a>
                                             </td>
                                             </tr>
                                     {% endfor %}
@@ -81,7 +81,7 @@
             },
               {
                 extend: 'print',
-                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img.png' %}' width='200' height='200'></img></div>"
+                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img1.png' %}' width='200' height='200'></img></div>"
             }
         ]
     } );

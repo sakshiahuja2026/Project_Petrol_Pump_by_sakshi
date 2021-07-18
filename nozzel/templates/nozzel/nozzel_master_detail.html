@@ -1,0 +1,39 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block body %}
+<div class="card profile-card">
+      <div class="header">
+            <center><h2>Nozzel View</h2></center>
+            </div>
+                    <div class="card card-about-me">
+                        <div class="body">
+                            <div class="col-sm-12">
+                                        <b>Nozzel_no</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.nozzel_no }}
+                                    </div>
+                        </div>
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b> Type</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.type}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Remark</b>
+                                    </div>
+                                    <div class="content">
+                                       {{ object.remark }}
+                                    </div>
+                                </div>
+                        <br><br><br><br>
+                        </div>
+                    </div>
+{% endblock %}

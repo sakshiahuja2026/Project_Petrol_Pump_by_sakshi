@@ -58,7 +58,7 @@
                                             <td>
                                                 <a href="{% url 'cpayment-update'  value.id %}" class="btn btn-info"> update</a>
                                                 <a href="{% url 'cpayment-delete'  value.id %}" class="btn btn-danger"> Delete</a>
-                                                <a href="{% url 'cpayment-detail'  value.id %}" class="btn btn-danger"> Detail</a>
+                                                <a href="{% url 'cpayment-detail'  value.id %}" class="btn btn-success"> Detail</a>
                                             </td>
                                             </tr>
                                     {% endfor %}
@@ -71,6 +71,8 @@
             </div>
             <!-- #END# Exportable Table -->
         </div>
+{% endblock %}
+{% block js %}
 {% endblock %}
 {% block extra_js %}
         <!-- Jquery Core Js -->

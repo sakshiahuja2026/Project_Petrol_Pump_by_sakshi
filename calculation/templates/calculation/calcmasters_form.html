@@ -161,7 +161,6 @@
                                 <label class="form-label">Total Diesel</label>
                                     <div class="form-line">
                                         {% crispy_field form.totaldiesel 'value' totaldiesel %}
-
                                         {% if form.totaldiesel.errors %}
                                             {% for error in form.totaldiesel.errors %}
                                                 <div class="invalid-feedback">
@@ -177,7 +176,6 @@
                                 <label class="form-label">Lost Diesel in liters</label>
                                     <div class="form-line">
                                         {% crispy_field form.lostdiesel 'value' lostdiesel %}
-
                                         {% if form.lostdiesel.errors %}
                                             {% for error in form.lostdiesel.errors %}
                                                 <div class="invalid-feedback">
@@ -189,7 +187,6 @@
                                 </div>
                             </div>
                             </div>
-
 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>
@@ -231,10 +228,9 @@
     <script>
 
     document.addEventListener('DOMContentLoaded',function () {
-        document.querySelector('#id_date').onkeyup = function () {
-            console.log({{ totalpetrol }})
-            document.querySelector('#id_totalpetrol').value={{ totalpetrol }}
-        }
+        document.querySelector("#id_totaldiesel").value={{ totaldiesel }}
+
+
     })
     </script>
 

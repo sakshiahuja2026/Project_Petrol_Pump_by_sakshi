@@ -1,0 +1,114 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block body %}
+<div class="card profile-card">
+                        <div class="header">
+            <center><h2>Tank View</h2></center>
+            </div>
+                    <div class="card card-about-me">
+                        <div class="body">
+                                <div class="col-sm-12">
+                                    <div class="title">
+                                        <i class="material-icons">date_range</i>
+                                        <b>Date</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.date }}
+                                    </div>
+                        </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        petrolbefore
+                                    </div>
+                                    <div class="content">
+                                       {{ object.petrolbefore }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        dieselbefore
+                                    </div>
+                                    <div class="content">
+                                        {{ object.dieselbefore }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        petrolafter
+                                    </div>
+                                    <div class="content">
+                                        {{ object.petrolafter }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        dieselafter
+                                    </div>
+                                    <div class="content">
+                                        {{ object.dieselafter }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        lostpetrol
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostpetrol }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        lostdiesel
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostdiesel }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">price_change</i>
+                                        lostpetrolprice
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostpetrolprice }}
+                                    </div>
+                                </div>
+                                 <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">price_change</i>
+                                        lostdieselprice
+                                    </div>
+                                    <div class="content">
+                                        {{ object.lostdieselprice }}
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        oilopeninlit
+                                    </div>
+                                    <div class="content">
+                                        {{ object.oilopeninlit}}
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">filter_alt</i>
+                                        oilcloseinlit
+                                    </div>
+                                    <div class="content">
+                                        {{ object.oilcloseinlit }}
+                                    </div>
+                                 </div>
+                            <br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>
+                    </div>
+</div>
+{% endblock %}

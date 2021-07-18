@@ -1,0 +1,51 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block body %}
+<div class="card profile-card">
+      <div class="header">
+            <center><h2>Rate View</h2></center>
+            </div>
+                    <div class="card card-about-me">
+                        <div class="body">
+                                <div class="col-sm-12">
+                                    <div class="title">
+                                        <i class="material-icons">date_range</i>
+                                        <b>Date</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.date }}
+                                    </div>
+                        </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">price_check</i>
+                                        <b>petrol_price</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.petrol_price}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">price_check</i>
+                                        <b>diesel_price</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.diesel_price }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons">price_check</i>
+                                        <b>oil_rate</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.oil_rate }}
+                                    </div>
+                                </div>
+                            <br><br><br><br><br><br>
+                        </div>
+                    </div>
+</div>
+{% endblock %}
