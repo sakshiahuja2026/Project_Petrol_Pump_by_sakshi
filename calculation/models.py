@@ -8,11 +8,11 @@ class calcmasters(models.Model):
     ptank_open=models.FloatField(default=0)
     ptank_close = models.FloatField(default=0)
     dtank_open=models.FloatField(default=0)
-    dtank_close = models.FloatField(null=True,blank=True ,default=0)
+    dtank_close = models.FloatField(null=True,blank=True,default=0)
     totalpetrol = models.FloatField(null=True,blank=True,default=0)
     totaldiesel = models.FloatField(null=True,blank=True,default=0)
-    lostpetrol = models.FloatField(null=True,blank=True,default=0,validators=[MinValueValidator(0,"Value must be greater than 0")])
-    lostdiesel = models.FloatField(null=True,blank=True,default=0,validators=[MinValueValidator(0,"Value must be greater than 0")])
+    lostpetrol = models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")],default=0)
+    lostdiesel = models.FloatField(null=True,blank=True,validators=[MinValueValidator(0,"Value must be greater than 0")],default=0)
 
     def __str__(self):
         return f"{self.ptank_close}-{self.dtank_close}"
