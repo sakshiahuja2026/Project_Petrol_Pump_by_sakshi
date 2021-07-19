@@ -37,6 +37,7 @@ urlpatterns = [
     path("employeepayment/",include("employeepayment.urls")),
     path("ntransaction/",include("n_transaction.urls")),
     path("calcmaster/",include("calculation.urls")),
+    path("expenses/",include("expenses.urls")),
     path("dashboard/",dashboard,name="dashboard")
 ]
 

@@ -2,113 +2,136 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block body %}
-<div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
+
+                    <div class="header">
+            <center><h2>Employment Payment Details</h2></center>
+            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.designation }}</p>
+
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+                <div class="col-sm-9">
+
                     <div class="card card-about-me">
+
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i><b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        employee id
+                                        <b>employee id</b>
                                     </div>
                                     <div class="content">
                                         {{ object.employeeid }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        amount
+                                        <b>amount</b>
                                     </div>
                                     <div class="content">
                                        {{ object.amount }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Finalise salary
+                                        <b>Finalise salary</b>
                                     </div>
                                     <div class="content">
                                        {{ object.finalisesalary }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        type
+                                        <b>type</b>
                                     </div>
                                     <div class="content">
                                         {{ object.type }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        bank name
+                                        <b>bank name</b>
                                     </div>
                                     <div class="content">
                                         {{ object.bankname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque no
+                                        <b>cheque no</b>
                                     </div>
                                     <div class="content">
                                         {{ object.chequeno }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        branch name
+                                        <b>branch name</b>
                                     </div>
                                     <div class="content">
                                         {{ object.branchname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque date
+                                        <b>cheque date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.cheque_date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        IFCS code
+                                        <i class="material-icons"></i>
+                                        <b>IFCS code</b>
                                     </div>
                                     <div class="content">
                                        {{ object.IFSC }}
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        reference id
+                                        <b>reference id</b>
                                     </div>
                                     <div class="content">
                                         {{ object.reference_id }}
                                     </div>
-                                </li>
+                                </div>
+                             <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>remarks</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.remarks }}
+                                    </div>
+                                </div>
+                            <br><br><br><br><br><br><br><br>
+                        </div>
 
-
-                            </ul>
                         </div>
                     </div>
+                </div>
 {% endblock %}

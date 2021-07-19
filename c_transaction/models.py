@@ -14,6 +14,7 @@ class c_transaction(models.Model):
     dieselprice=models.FloatField(null=True,blank=True)
     nozzel=models.ForeignKey(nozzel_master, on_delete=models.CASCADE, related_name='nozzel')
 
+
     def __str__(self):
         return f"{self.date}-{self.vehicle_id}"
 

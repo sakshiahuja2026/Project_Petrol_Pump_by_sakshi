@@ -13,7 +13,7 @@ class creditor_master(models.Model):
     contactpersonname = models.CharField(max_length=40)
     contactpersonmobile = models.CharField(max_length=10,validators=[MinLengthValidator(10,"Phone numer must be of 10 digit")])
     companyname = models.CharField(max_length=30)
-    homeno = models.CharField(max_length=10)
+    officeno = models.CharField(max_length=10)
     street = models.CharField(max_length=20)
     area = models.CharField(max_length=30)
     pin = models.IntegerField()

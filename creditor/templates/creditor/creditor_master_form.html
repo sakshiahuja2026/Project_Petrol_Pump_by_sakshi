@@ -188,12 +188,12 @@
                             </div>
                             <div class="col-sm-4">
                             <div class="form-group form-float">
-                                        <label class="form-label">Block
+                                        <label class="form-label">Office No.
                                         </label>
                                     <div class="form-line">
-                                        {% crispy_field form.homeno %}
-                                         {% if form.homeno.errors %}
-                                            {% for error in form.homeno.errors %}
+                                        {% crispy_field form.officeno %}
+                                         {% if form.officeeno.errors %}
+                                            {% for error in form.officeeno.errors %}
                                                 <div class="invalid-feedback">
                                                   {{ error }}
                                                 </div>
