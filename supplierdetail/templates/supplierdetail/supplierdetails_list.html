@@ -2,15 +2,17 @@
 {% load static %}
 {% block extra_css %}
     <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet"/>
-<link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/searchbuilder/1.1.0/css/searchBuilder.dataTables.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css" rel="stylesheet">
-<link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
-
+    <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/searchbuilder/1.1.0/css/searchBuilder.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/datetime/1.1.0/css/dataTables.dateTime.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/colreorder/1.5.4/css/colReorder.dataTables.min.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
+    <div class="header" >
+                     <center><h2>Supplier Details Table</h2></center>
+                    </div>
 
-                                <table id="example">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="example">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
@@ -38,7 +40,7 @@
                                    <tbody>
                                    {% for supplierdetail in supplierdetails %}
                                        <tr>
-                                        <td>{{ supplierdetail.date }}</td>
+                                        <td data-sort="{{ supplierdetail.date|date:"Ymd" }}"> {{ supplierdetail.date | date:"d-m-Y" }} </td>
                                         <td>{{ supplierdetail.receipt_no }}</td>
                                         <td>{{ supplierdetail.petrolbefore }}</td>
                                         <td>{{ supplierdetail.dieselbefore }}</td>
@@ -48,7 +50,7 @@
                                        <th>
                                            <a href="{% url 'supplierdetail-update'  supplierdetail.id %}" class="btn btn-info"> update</a>
                                            <a href="{% url 'supplierdetail-delete'  supplierdetail.id %}" class="btn btn-danger"> Delete</a>
-                                           <a href="{% url 'supplierdetail-detail'  supplierdetail.id %}" class="btn btn-success"> Detail</a>
+                                           <a href="{% url 'supplierdetail-detail'  supplierdetail.id %}" class="btn btn-success waves-effect"> Detail</a>
                                        </th>
 
                                        </tr>
@@ -59,7 +61,7 @@
 {% block js %}
 {% endblock %}
 {% block extra_js %}
-            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js"></script>
     <script src="https://cdn.datatables.net/searchbuilder/1.1.0/js/dataTables.searchBuilder.min.js"></script>
@@ -70,6 +72,7 @@
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.colVis.min.js"></script>
 
     <script>
     $(document).ready(function() {
@@ -77,26 +80,37 @@
         dom: 'QBfrtip',
         colReorder: true,
         buttons: [
+            'colvis',
             'copy',
             {
                 extend: 'excel',
-                messageTop: 'PDF created by PDFMake with Buttons for DataTables.'
+                messageTop: 'PDF created by PDFMake with Buttons for DataTables.',
+                 exportOptions:{
+            columns : ':visible'
+              }
             },
             {
                 extend: 'pdfHtml5',
-                messageTop: 'INDIAN OIL'
+                messageTop: 'INDIAN OIL',
+                 exportOptions:{
+            columns : ':visible'
+              }
+
             },
               {
                 extend: 'print',
-                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img1.png' %}' width='200' height='200'></img></div>"
-            }
+                messageTop: "<div class='col-sm-3'><h1>INDIAN OIL</h1></div><div class='col-sm-3'><img src='{% static 'img1.png' %}' width='100' height='100' ></img></div>",
+                exportOptions:{
+            columns : ':visible'
+              }
+              }
         ]
+
+
     } );
 } );
     </script>
-
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
-    <script src="{% static 'js/pages/tables/jquery-datatable.js'%}"></script>
-
+{#    <script src="{% static 'js/pages/tables/jquery-datatable.js'%}"></script>#}
 {% endblock %}

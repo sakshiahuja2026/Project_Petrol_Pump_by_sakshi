@@ -1,113 +1,120 @@
 {% extends "user/layout.html" %}
 {% block body %}
+{% load static %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-    <div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
+    <div class="col-sm-3">
+                <div class="card profile-card">
 
 
-                    </div>
+                            <div class="image-area">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'img1.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.companyname }}</p>
+
+                            </div>
+
+                </div>
+    </div>
+    <div class="col-sm-9">
 
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i>
+                                        <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        creditor id
-                                    </div>
-                                    <div class="content">
-                                        {{ object.creditorid }}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        amount
-                                    </div>
-                                    <div class="content">
-                                       {{ object.amount }}
-                                    </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        type
+                                        <b>vehicle id</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.type }}
+                                        {{ object.vehicle_id }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        bank name
+                                        <b>Nozzel Id</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.bankname }}
+                                       {{ object.nozzel }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque no
+                                        <b>Driver Name</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.chequeno }}
+                                        {{ object.drivername }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-4">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        branch name
+                                        <b>Company Name</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.branchname }}
+                                        {{ object.companyname }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        cheque date
+                                        <b>Petrol in liters</b>x
                                     </div>
                                     <div class="content">
-                                        {{ object.check_date }}
+                                        {{ object.petrolinlit }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        reference id
+                                        <b>Diesel in liters</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.reference_id }}
+                                        {{ object.dieselinlit }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Slip number
+                                        <b>Petrol Price</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.slipno }}
+                                        {{ object.petrolprice }}
                                     </div>
-                                </li>
+                                </div >
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Diesel Price</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.dieselprice }}
+                                    </div>
+                                </div >
 
 
-                            </ul>
+<br><br><br><br><br><br><br><br>
+
+                        </div>
                         </div>
                     </div>
         <input type="submit" value="delete" class="btn btn-danger">
-        <a href="{% url 'cpayment-view' %}" class="btn btn-info" >cancel </a>
+        <a href="{% url 'employee-view' %}" class="btn btn-info" >cancel </a>
     </form>
 {% endblock %}

@@ -2,13 +2,17 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block body %}
+
+    <div class="header" >
+                     <center><h2>Rates Detail</h2></center>
+                    </div>
 <div class="col-sm-3">
                 <div class="card profile-card">
 
 
                             <div class="image-area">
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'img1.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
                                 <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
@@ -19,223 +23,51 @@
                 </div>
     </div>
                 <div class="col-sm-9">
-
                     <div class="card card-about-me">
 
                         <div class="body">
 
                                 <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>
                                         <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
                                 </div>
+                            {% block pr %}
                                 <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Nozzel id</b>
+                                        <i class="material-icons"></i><b>
+                                        Petrol Price</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.nozzelid }}
+                                        {{ object.petrol_price }}
                                     </div>
                                 </div>
+                                {% endblock %}
+                                {% block dr %}
                                 <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Opening time</b>
+                                        <i class="material-icons"></i><b>
+                                        Diesel Price</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.openingtime }}
+                                        {{ object.diesel_price }}
                                     </div>
                                 </div>
+                                {% endblock %}
                                 <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>closing time</b>
+                                        <i class="material-icons"></i><b>
+                                        Oil Price</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.closingtime }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Opening petrol in liter</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.openinglitpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>closing petrol in lit</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.closinglitpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total petrol</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total petrol Price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totalpprice }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost Petrol</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrol }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost petrol price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostpetrolprice }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total Diesel</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totaldiesel }}
+                                        {{ object.oil_rate }}
                                     </div>
                                 </div>
 
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Total diesel price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.totaldprice }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Opening Diesel in lit</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.openinglitdiesel }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>closing Diesel in lit</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.closinglitdiesel }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost Diesel</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostdiesel }}
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Lost diesel price</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.lostdieselprice }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>amount</b>
-                                    </div>
-                                    <div class="content">
-                                       {{ object.amount }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Paytm</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.paytm }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Googlepay</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.googlepay }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Card</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.card }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Phonepay</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.phonepay }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Cash</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.cash }}
-                                    </div>
-                                </div>
-
-
-                                <div class="col-sm-3">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>creditor Amount</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.amount }}
-                                    </div>
-                                </div>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <br><br><br><br>
                         </div>
                     </div>
                 </div>

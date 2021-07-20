@@ -2,66 +2,95 @@
 {% load static %}
 {% load crispy_forms_field %}
 {% block body %}
-<div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
+    <div class="header" >
+                     <center><h2>Creditor Vehicle Detail</h2></center>
                     </div>
+<div class="col-sm-3">
+                <div class="card profile-card">
+
+
+                            <div class="image-area">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'img1.png' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.companyname }}</p>
+
+                            </div>
+
+                </div>
+    </div>
+                <div class="col-sm-9">
+
                     <div class="card card-about-me">
+
                         <div class="body">
-                            <div class="col-sm-6">
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>
-                                        <b>Date</b>
+                                        <i class="fa fa-birthday-cake"></i><b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
                                 </div>
-                            <div class="col-sm-6">
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Creditor</b>
-                                    </div>
-                                    <div class="content">
-                                        {{ object.creditor }}
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Vehicle Number</b>
+                                        <i class="material-icons"></i><b>
+                                        Vehicle Number</b>
                                     </div>
                                     <div class="content">
                                         {{ object.v_no }}
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Driver Name</b>
+                                        <i class="material-icons"></i><b>
+                                        Driver Name</b>
                                     </div>
                                     <div class="content">
                                        {{ object.driver_name }}
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>fuel type</b>
+                                        <i class="material-icons"></i><b>
+                                        fuel type</b>
                                     </div>
                                     <div class="content">
                                         {{ object.fuel_type }}
                                     </div>
                                 </div>
-                            <div class="col-sm-6">
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons"></i>
-                                        <b>Remarks</b>
+                                        <i class="material-icons"></i><b>
+                                        Remarks</b>
                                     </div>
                                     <div class="content">
-                                        {{ object.remarks }}
+                                        {% if object.remarks is not  None %}
+
+                                             {{ object.remarks }}
+
+                                        {% endif %}
                                     </div>
                                 </div>
-                    <br><br><br><br><br><br><br>
+
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i><b>
+                                        Creditor</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.creditor }}
+                                    </div>
+                                </div>
+
+                            <br><br><br><br><br><br><br><br>
+
+
                         </div>
                     </div>
+                </div>
 {% endblock %}
