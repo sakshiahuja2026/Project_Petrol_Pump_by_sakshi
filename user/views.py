@@ -31,14 +31,28 @@ def dashboard(request):
         'earning':data1['amount__sum']
     })
 
-def get_task_amount_by_month_chart(request):
+def get_petrol_amount_by_month_chart(request):
     from django.db.models import Sum
     from datetime import datetime
-    result = rate.objects.annotate(month=TruncMonth('start_date')).values('month').annotate(
-         no_of_ad=Sum('petrol_price'))
+    from calculation.models import calcmasters
+    result = calcmasters.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+         no_of_ad=Sum('totalpetrol'))
     data = {'label': [], 'values': []}
     for ex in result:
         data['label'].append(datetime.strftime(ex['month'], '%B'))
         data['values'].append(ex['no_of_ad'])
         print(data)
     return JsonResponse(data)
+
+def get_diesel_amount_by_month_chart(request):
+    from django.db.models import Sum
+    from datetime import datetime
+    from calculation.models import calcmasters
+    result = calcmasters.objects.annotate(month=TruncMonth('date')).values('month').annotate(
+        no_of_ad1=Sum('totaldiesel'))
+    data1 = {'label': [], 'values': []}
+    for ex in result:
+        data1['label'].append(datetime.strftime(ex['month'], '%B'))
+        data1['values'].append(ex['no_of_ad1'])
+        print(data1)
+    return JsonResponse(data1)

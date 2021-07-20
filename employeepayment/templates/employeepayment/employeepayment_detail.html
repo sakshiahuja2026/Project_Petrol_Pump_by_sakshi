@@ -65,6 +65,7 @@
                                         {{ object.type }}
                                     </div>
                                 </div>
+                            {% if object.type == 'bank' %}
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -110,6 +111,7 @@
                                        {{ object.IFSC }}
                                     </div>
                                 </div>
+                            {% else %}
                                 <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
@@ -119,6 +121,7 @@
                                         {{ object.reference_id }}
                                     </div>
                                 </div>
+                            {% endif %}
                              <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>

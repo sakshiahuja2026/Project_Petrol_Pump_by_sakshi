@@ -43,7 +43,8 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div id="form_validation" method="POST">
+
+                            <form id="form_validation" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
                                         <label class="form-label">Date </label>
@@ -258,24 +259,16 @@
                     </div>
                   </div>
 
-                  </div>
 
-
-                  </div>
 
                   <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
      </form>
                         </div>
                     </div>
                 </div>
-
+                </div>
 {% endblock %}
 {% block extra_js %}
-     <!-- Jquery Validation Plugin Css -->
-    <script src="{% static 'plugins/jquery-validation/jquery.validate.js'%}"></script>
-
-    <!-- JQuery Steps Plugin Js -->
-    <script src="{% static 'plugins/jquery-steps/jquery.steps.js'%}"></script>
 
     <!-- Sweet Alert Plugin Js -->
     <script src="{% static 'plugins/sweetalert/sweetalert.min.js'%}"></script>
@@ -291,13 +284,12 @@
     <!-- Bootstrap Datepicker Plugin Js -->
     <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'%}"></script>
 <script>
-$(function () {
-    <!-- bootstrap color picker -->
-    //Date range picker
-    $('#reservationdate').datetimepicker({
-        format: 'YYYY-MM-DD'
+ $('.datepicker').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
     });
-});
 </script>
 
     <script>
@@ -326,7 +318,5 @@ $(function () {
         })
 
     </script>
-    </div>
-    </div>
-    </div>
-    {% endblock %}
+
+{% endblock %}

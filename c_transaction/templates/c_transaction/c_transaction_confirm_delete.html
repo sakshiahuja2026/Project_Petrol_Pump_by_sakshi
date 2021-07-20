@@ -1,81 +1,117 @@
-{% extends "user/layout.html" %}
+% extends "user/layout.html" %}
 {% block body %}
+{% load static %}
     <h1> Are you sure you want to delete ?</h1>
     <form method="post">
     {% csrf_token %}
-    <div class="card profile-card">
-                        <div class="profile-header">&nbsp;</div>
+    <div class="col-sm-3">
+                <div class="card profile-card">
 
 
-                    </div>
+                            <div class="image-area">
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <img src="{% static 'IndianOilLogo100x100 (1).jpg' %}" width="130px" height="130px" alt="AdminBSB - Profile Image" />
+                            </div>
+                            <div class="content-area">
+                                <h4>{{ object.fname }} {{ object.mname }} {{ object.lname }}</h4>
+                                <p>{{ object.companyname }}</p>
+
+                            </div>
+
+                </div>
+    </div>
+    <div class="col-sm-9">
 
                     <div class="card card-about-me">
 
                         <div class="body">
-                            <ul>
-                                <li>
+
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="fa fa-birthday-cake"></i>Date
+                                        <i class="fa fa-birthday-cake"></i>
+                                        <b>Date</b>
                                     </div>
                                     <div class="content">
                                         {{ object.date }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
-                                        <i class="material-icons">location_on</i>
-                                        vehicle id
+                                        <i class="material-icons"></i>
+                                        <b>vehicle id</b>
                                     </div>
                                     <div class="content">
                                         {{ object.vehicle_id }}
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="title">
-                                        <i class="material-icons">edit</i>
-                                        Nozzel Id
-                                    </div>
-                                    <div class="content">
-                                       {{ object.nozzle }}
-                                    </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Petrol in liters
+                                        <b>Nozzel Id</b>
+                                    </div>
+                                    <div class="content">
+                                       {{ object.nozzel }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Driver Name</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.drivername }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-4">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Company Name</b>
+                                    </div>
+                                    <div class="content">
+                                        {{ object.companyname }}
+                                    </div>
+                                </div >
+                                <div class="col-sm-3">
+                                    <div class="title">
+                                        <i class="material-icons"></i>
+                                        <b>Petrol in liters</b>
                                     </div>
                                     <div class="content">
                                         {{ object.petrolinlit }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Diesel in liters
+                                        <b>Diesel in liters</b>
                                     </div>
                                     <div class="content">
                                         {{ object.dieselinlit }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Petrol Price
+                                        <b>Petrol Price</b>
                                     </div>
                                     <div class="content">
                                         {{ object.petrolprice }}
                                     </div>
-                                </li>
-                                <li>
+                                </div >
+                                <div class="col-sm-3">
                                     <div class="title">
                                         <i class="material-icons"></i>
-                                        Diesel Price
+                                        <b>Diesel Price</b>
                                     </div>
                                     <div class="content">
                                         {{ object.dieselprice }}
                                     </div>
-                                </li>
-                            </ul>
+                                </div >
+
+
+<br><br><br><br><br><br><br><br>
+
+                        </div>
                         </div>
                     </div>
         <input type="submit" value="delete" class="btn btn-danger">
