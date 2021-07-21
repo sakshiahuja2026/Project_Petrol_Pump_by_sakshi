@@ -3,6 +3,7 @@ from django.urls import reverse
 from vehicle.models import vehicle
 from nozzel.models import nozzel_master
 from datetime import datetime
+from django.shortcuts import render
 # Create your models here.
 
 class c_transaction(models.Model):
@@ -23,3 +24,9 @@ class c_transaction(models.Model):
 
     def get_absolute_url(self):
         return reverse('ctransaction-view')
+
+def print_page(request,id):
+    object=c_transaction.objects.get(id=id)
+    return render(request,"c_transaction/print.html",{
+        "object":object
+    })
